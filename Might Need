@@ -1,0 +1,22 @@
+Might Need
+
+<img id="myImage" src="smiley.gif">
+
+<script>
+document.getElementById("myImage").src = "landscape.jpg";
+</script>
+
+------------------------------
+
+<p id="p2">Hello World!</p>
+
+<script>
+document.getElementById("p2").style.color = "blue";
+</script>
+
+------------------------------
+
+event listners
+https://www.w3schools.com/js/js_htmldom_eventlistener.asp
+
+----------------------------

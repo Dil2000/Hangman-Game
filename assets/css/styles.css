@@ -1,0 +1,32 @@
+
+
+
+    h1,h5{
+      color:#9933cc;
+    }
+    h4{
+      color:#77b300;
+    }
+    div{
+      color:#ff8800;
+    }
+
+    .navbar {
+      background-color:#181818;
+    }
+
+    footer {
+      padding: 20px;
+      background-color:#1818;
+      position:fixed;
+      bottom:0px;
+    }
+
+    p{
+      color:#d1d1d1;
+    }
+    
+    ul{
+      display:inline;
+    }
+
