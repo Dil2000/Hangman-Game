@@ -1,36 +1,11 @@
-    
-
-/*  var capitalCities =["kabul","canberra","colombo","washingtondc"];
-
-  var letters = ["a", "b", "c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-  var wins = 0;
-  var losses = 0;
-  
-  document.onkeyup = function(event) {
-  var userGuessK = event.key;
-  console.log(userGuessK);
-  var userGuess = userGuessK.toLowerCase();
-  console.log(userGuess);
-}
-
-  //Disply letters in the html
-for(var i = 0 ; i < letters.length ; i++){
-	console.log(letters[i]);
-	document.getElementById("#showLetters").innerHTML = letters[i];
-}
-
-*/
-
-/***********************************************************/
-
 window.onload = function () {
 
   var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
         'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
         't', 'u', 'v', 'w', 'x', 'y', 'z'];
   
-  var categories;         // Array of topics
-  var chosenCategory;     // Selected catagory
+  ///var categories;         // Array of topics
+  ///var chosenCategory;     // Selected catagory
   var getHint ;          // Word getHint
   var word ;              // Selected word
   var guess ;             // Geuss
@@ -38,13 +13,14 @@ window.onload = function () {
   var lives ;             // Lives
   var counter ;           // Count correct geusses
   var space;              // Number of spaces in word '-'
+  var noOfLoss = 0;
+  var noOfLoss = 0;
 
   // Get elements
   var showLives = document.getElementById("mylives");
-  var showCatagory = document.getElementById("scatagory");
-  var getHint = document.getElementById("hint");
-  var showClue = document.getElementById("clue");
-
+  ///var showCatagory = document.getElementById("scatagory");
+  ///var getHint = document.getElementById("hint");
+  ///var showClue = document.getElementById("clue");
 
 
   // create alphabet ul
@@ -64,7 +40,7 @@ window.onload = function () {
   }
     
   /*
-  // Select Catagory
+  /// Select Catagory
   var selectCat = function () {
     if (chosenCategory === categories[0]) {
       catagoryName.innerHTML = "The Chosen Category Is Premier League Football Teams";
@@ -103,19 +79,26 @@ window.onload = function () {
     showLives.innerHTML = "You have " + lives + " lives";
     if (lives < 1) {
       showLives.innerHTML = "Game Over";
+      noOfLoss = noOfLoss + 1;
+      ///N
+      //Working - $("div#img").css("background-color", "yellow");
+      
+      $("div#img").css("display","inline");
+      Resetfunction();
+
+
+
     }
     for (var i = 0; i < geusses.length; i++) {
       if (counter + space === geusses.length) {
         showLives.innerHTML = "You Win!";
+        noOfWins = noOfWins + 1;
+
       }
     }
   }
 
-      // Animate man
-  var animate = function () {
-    var drawMe = lives ;
-    drawArray[drawMe]();
-  }
+
 
   
    // Hangman
@@ -188,12 +171,24 @@ window.onload = function () {
       var geuss = (this.innerHTML);
       this.setAttribute("class", "active");
       this.onclick = null;
+      var usedLet = 0;
       for (var i = 0; i < word.length; i++) {
         if (word[i] === geuss) {
           geusses[i].innerHTML = geuss;
           counter += 1;
         } 
+        else {
+          usedLet++;
+        }
       }
+
+      /* N */
+      if (word.length === usedLet){
+        var mydiv = document.getElementById("usedLe");
+        mydiv.innerHTML += geuss;
+      }
+      /***/
+
       var j = (word.indexOf(geuss));
       if (j === -1) {
         lives -= 1;
@@ -215,7 +210,7 @@ window.onload = function () {
     chosenCategory = categories[Math.floor(Math.random() * categories.length)];
     word = chosenCategory[Math.floor(Math.random() * chosenCategory.length)];
     word = word.replace(/\s/g, "-");
-    console.log(word);
+    //console.log(word);
     buttons();
 
     geusses = [ ];
@@ -224,7 +219,7 @@ window.onload = function () {
     space = 0;
     result();
     comments();
-    selectCat();    
+    //selectCat();    
     canvas();
   }
 
@@ -232,7 +227,7 @@ window.onload = function () {
   
   // Hint
 
-    hint.onclick = function() {
+ /*   hint.onclick = function() {
 
       hints = [
         ["Based in Mersyside", "Based in Mersyside", "First Welsh team to reach the Premier Leauge", "Owned by A russian Billionaire", "Once managed by Phil Brown", "2013 FA Cup runners up", "Gazza's first club"],
@@ -244,8 +239,9 @@ window.onload = function () {
     var hintIndex = chosenCategory.indexOf(word);
     showClue.innerHTML = "Clue: - " +  hints [catagoryIndex][hintIndex];
   };
-
+*/
    // Reset
+
 
   document.getElementById('reset').onclick = function() {
     correct.parentNode.removeChild(correct);
@@ -254,6 +250,15 @@ window.onload = function () {
     context.clearRect(0, 0, 400, 400);
     play();
   }
+
+
+function Resetfunction(){
+    correct.parentNode.removeChild(correct);
+    letters.parentNode.removeChild(letters);
+    showClue.innerHTML = "";
+    context.clearRect(0, 0, 400, 400);
+    play();
 }
 
 
+}
