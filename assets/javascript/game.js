@@ -98,6 +98,22 @@ window.onload = function () {
     }
   }
 
+        // Animate man
+  var animate = function () {
+    var drawMe = lives ;
+    drawArray[drawMe]();
+  }
+
+  
+   // Hangman
+  canvas =  function(){
+
+    myStickman = document.getElementById("stickman");
+    context = myStickman.getContext('2d');
+    context.beginPath();
+    context.strokeStyle = "#fff";
+    context.lineWidth = 2;
+  };
 
 
   
@@ -111,7 +127,7 @@ window.onload = function () {
     context.lineWidth = 2;
   };
   
-    head = function(){
+  head = function(){
       myStickman = document.getElementById("stickman");
       context = myStickman.getContext('2d');
       context.beginPath();
@@ -243,7 +259,7 @@ window.onload = function () {
    // Reset
 
 
-  document.getElementById('reset').onclick = function() {
+/*  document.getElementById('reset').onclick = function() {
     correct.parentNode.removeChild(correct);
     letters.parentNode.removeChild(letters);
     showClue.innerHTML = "";
@@ -251,7 +267,7 @@ window.onload = function () {
     play();
   }
 
-
+/*
 function Resetfunction(){
     correct.parentNode.removeChild(correct);
     letters.parentNode.removeChild(letters);
@@ -260,5 +276,5 @@ function Resetfunction(){
     play();
 }
 
-
+*/
 }
