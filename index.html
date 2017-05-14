@@ -14,7 +14,13 @@
   <link rel="stylesheet" href="http://bootswatch.com/cyborg/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/styles.css">
 
+  <!-- Java Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- script specially created for this page -->
+
 </head>
+
 <body>
 
 <nav class="navbar navbar-default">
@@ -50,7 +56,6 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-  
 <div class="container text-center">  
   <div class="row">
     <div class="col-sm-12">
@@ -58,49 +63,39 @@
       <p>Instrctions : Guess 2017 top songs and press the letters to complete the word. If that letter is in the word(s) then it fills the blank(s) of the word. If the letter isn't in the word, a body part will be added to the gallows (head, body, left arm, right arm, left leg, right leg). Continue guessing letters until either solve the word or all six body parts are on the gallows.</p>
     </div>
   </div>  
-
-  <div class="row content">
-
-    <div class="col-sm-2 sidenav">
-      <h4> Guess 2017 top songs </h4>
-      <p> Hint - We'll provide the name of the singer or band<p>
-      <div id="uwin"></div>
-    </div>
-
-    <div class="col-sm-8 text-center"> 
-       Image
-       <hr>
-       <h4>_ _ _ _ _ _</h4>
   
+  <div class ="row">
+
+    <div class="col-sm-4 sidenav">
+      <h4> Canvas</h4>  
+      <canvas id="stickman">This Text will show if the Browser does NOT support HTML5 Canvas tag</canvas>  
+      <button id="reset">Play again</button>  
+    </div>
+  
+    <div class="col-sm-4">
+      <h4 id="hold"></h4>
+      <h5 id="mylives"></h5>
     </div>
 
-    <div class="col-sm-2 sidenav">
-      <h4> Letters Used </h4><div id="uloss"></div>
+    <div class="col-sm-4 sidenav">  
+      <h4> Letters </h4>      
+      <div id="buttons"></div>      
     </div>
 
   </div>
 
-</div>
-
-<footer class="container">
+<footer>
   <div class="col-sm-6 text-left">
       <p>&copy copyright 2017 Nelum Sam</p>
   </div>
   <div class="col-sm-6 text-right">
-    <ul>
-      <li><a href="#" target="_blank"><img src="assets/images/git.png" alt="git" width="40px" height="40px"></a></li>
-      <li><a href="#" target="_blank"><img src="assets/images/linked.png" alt="Linked" width="40px" height="40px"></a></li>
-    </ul>
+     <a href="#" target="_blank"><img src="assets/images/git.png" alt="git" width="40px" height="40px"></a>
+     <a href="#" target="_blank"><img src="assets/images/linked.png" alt="Linked" width="40px" height="40px"></a>
   </div>
+
 </footer>
 
-  <!-- Java Scripts -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!-- script specially created for this page -->
-  <script type="text/javascript" src="assets/javascript/game.js"></script>
-  <script>
-    console.log(userText);
-  </script>
+<script type="text/javascript" src="assets/javascript/game.js"></script>
+
 </body>
 </html>
