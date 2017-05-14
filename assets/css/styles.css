@@ -8,6 +8,9 @@
     h4{
       color:#77b300;
     }
+    h2{
+      color:#2a9fd6;
+    }
     div{
       color:#ff8800;
     }
@@ -16,13 +19,18 @@
       background-color:#181818;
     }
 
+    #Logo{
+      margin-top:-30px;
+    }
+
     footer {
-      padding: 20px;
-      background-color:#181818;
-      position:fixed;
-      bottom:0px;
-      left:0px;
-      width:100%;
+    /*background-color:#181818;      
+    position: absolute;*/
+    left: 0;
+    bottom: 0;
+    height:65px;
+    width: 100%;
+    margin-left: -8px;
     }
 
     p{
@@ -50,16 +58,22 @@
   width:35px;
   height:30px;
   padding-top:10px;
-  background:#424242;
+  background-color:#424242;
   cursor:pointer;
   @include corners(5px);
   border: solid 1px $white;
-    
-    &:hover{
+}
+
+#alphabet li:hover{
       background:#2a9fd6;
       border: solid 1px $white;
+      color:white;
     }
+
+#alphabet li:visited{
+  background-color:yellow;
 }
+
 
 #my-word li {
   position: relative;
@@ -87,8 +101,6 @@
 }*/
 
 button{
-  @include corners (5px);
-  background:red;
   color:white;
   border: solid 1px white;
   text-decoration:none;
@@ -124,8 +136,16 @@ canvas{
   color:#2a9fd6;
 }
 
-/* Mixin's */ 
+#stickman{
+  background-color:#424242;
+}
 
+#img{  
+  display:none;
+}
+
+/* Mixin's */
+/*
 @mixin transition {
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
@@ -183,7 +203,9 @@ canvas{
 }
   }
 
-  
+
+
+
 /* Variabes 
 $orange: #ffa600;
 $green: #c1d72e;
