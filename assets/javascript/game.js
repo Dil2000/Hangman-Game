@@ -4,8 +4,8 @@ window.onload = function () {
         'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
         't', 'u', 'v', 'w', 'x', 'y', 'z'];
   
-  ///var categories;         // Array of topics
-  ///var chosenCategory;     // Selected catagory
+  var categories;         // Array of topics
+  var chosenCategory;     // Selected catagory
   var getHint ;          // Word getHint
   var word ;              // Selected word
   var guess ;             // Geuss
@@ -13,14 +13,13 @@ window.onload = function () {
   var lives ;             // Lives
   var counter ;           // Count correct geusses
   var space;              // Number of spaces in word '-'
-  var noOfLoss = 0;
-  var noOfLoss = 0;
 
   // Get elements
   var showLives = document.getElementById("mylives");
-  ///var showCatagory = document.getElementById("scatagory");
-  ///var getHint = document.getElementById("hint");
-  ///var showClue = document.getElementById("clue");
+  var showCatagory = document.getElementById("scatagory");
+  var getHint = document.getElementById("hint");
+  var showClue = document.getElementById("clue");
+
 
 
   // create alphabet ul
@@ -39,8 +38,8 @@ window.onload = function () {
     }
   }
     
-  /*
-  /// Select Catagory
+  
+  // Select Catagory
   var selectCat = function () {
     if (chosenCategory === categories[0]) {
       catagoryName.innerHTML = "The Chosen Category Is Premier League Football Teams";
@@ -50,7 +49,6 @@ window.onload = function () {
       catagoryName.innerHTML = "The Chosen Category Is Cities";
     }
   }
-  */
 
   // Create geusses ul
    result = function () {
@@ -79,26 +77,16 @@ window.onload = function () {
     showLives.innerHTML = "You have " + lives + " lives";
     if (lives < 1) {
       showLives.innerHTML = "Game Over";
-      noOfLoss = noOfLoss + 1;
-      ///N
-      //Working - $("div#img").css("background-color", "yellow");
-      
       $("div#img").css("display","inline");
-      Resetfunction();
-
-
-
     }
     for (var i = 0; i < geusses.length; i++) {
       if (counter + space === geusses.length) {
         showLives.innerHTML = "You Win!";
-        noOfWins = noOfWins + 1;
-
       }
     }
   }
 
-        // Animate man
+      // Animate man
   var animate = function () {
     var drawMe = lives ;
     drawArray[drawMe]();
@@ -114,20 +102,8 @@ window.onload = function () {
     context.strokeStyle = "#fff";
     context.lineWidth = 2;
   };
-
-
   
-   // Hangman
-  canvas =  function(){
-
-    myStickman = document.getElementById("stickman");
-    context = myStickman.getContext('2d');
-    context.beginPath();
-    context.strokeStyle = "#fff";
-    context.lineWidth = 2;
-  };
-  
-  head = function(){
+    head = function(){
       myStickman = document.getElementById("stickman");
       context = myStickman.getContext('2d');
       context.beginPath();
@@ -193,18 +169,16 @@ window.onload = function () {
           geusses[i].innerHTML = geuss;
           counter += 1;
         } 
-        else {
+        else{
           usedLet++;
         }
       }
-
       /* N */
       if (word.length === usedLet){
         var mydiv = document.getElementById("usedLe");
         mydiv.innerHTML += geuss;
       }
       /***/
-
       var j = (word.indexOf(geuss));
       if (j === -1) {
         lives -= 1;
@@ -220,13 +194,15 @@ window.onload = function () {
   // Play
   play = function () {
     categories = [
-        ["storrs", "atlanta", "stamford", "savanna"]
+        ["everton", "liverpool", "swansea", "chelsea", "hull", "manchester-city", "newcastle-united"],
+        ["alien", "dirty-harry", "gladiator", "finding-nemo", "jaws"],
+        ["manchester", "milan", "madrid", "amsterdam", "prague"]
     ];
 
     chosenCategory = categories[Math.floor(Math.random() * categories.length)];
     word = chosenCategory[Math.floor(Math.random() * chosenCategory.length)];
     word = word.replace(/\s/g, "-");
-    //console.log(word);
+    console.log(word);
     buttons();
 
     geusses = [ ];
@@ -235,7 +211,7 @@ window.onload = function () {
     space = 0;
     result();
     comments();
-    //selectCat();    
+    selectCat();
     canvas();
   }
 
@@ -243,7 +219,7 @@ window.onload = function () {
   
   // Hint
 
- /*   hint.onclick = function() {
+    hint.onclick = function() {
 
       hints = [
         ["Based in Mersyside", "Based in Mersyside", "First Welsh team to reach the Premier Leauge", "Owned by A russian Billionaire", "Once managed by Phil Brown", "2013 FA Cup runners up", "Gazza's first club"],
@@ -255,26 +231,16 @@ window.onload = function () {
     var hintIndex = chosenCategory.indexOf(word);
     showClue.innerHTML = "Clue: - " +  hints [catagoryIndex][hintIndex];
   };
-*/
+
    // Reset
 
-
-/*  document.getElementById('reset').onclick = function() {
+  document.getElementById('reset').onclick = function() {
     correct.parentNode.removeChild(correct);
     letters.parentNode.removeChild(letters);
     showClue.innerHTML = "";
     context.clearRect(0, 0, 400, 400);
     play();
   }
-
-/*
-function Resetfunction(){
-    correct.parentNode.removeChild(correct);
-    letters.parentNode.removeChild(letters);
-    showClue.innerHTML = "";
-    context.clearRect(0, 0, 400, 400);
-    play();
 }
 
-*/
-}
+
