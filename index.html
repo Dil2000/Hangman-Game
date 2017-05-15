@@ -61,31 +61,47 @@
   <div class="row">
     <div class="col-sm-12">
       <h1> Hangman Game</h1>
-      <p>Instrctions : Guess cities and press the letters to complete the word. If that letter is in the word(s) then it fills the blank(s) of the word. If the letter isn't in the word, a body part will be added to the gallows (head, body, left arm, right arm, left leg, right leg). Continue guessing letters until either solve the word or all six body parts are on the gallows.</p>
+      <h6> Click start button & click on letters</h6> 
+      <hr>
     </div>
   </div>  
   
   <div class ="row">
 
     <div class="col-sm-4 sidenav">
-      <h5><div id="usedLe"></div></h5> <!-- show letters used -->
-      <canvas id="stickman">This Text will show if the Browser does NOT support HTML5 Canvas tag</canvas> 
+      <canvas id="stickman">This Text will show if the Browser does NOT support HTML5 Canvas tag</canvas>
+      <button type="button" class="btn btn-success btn-sm"> Total Wins     <span class="badge"><div id="#choiceW")></div></span></button>
+      <button type="button" class="btn btn-success btn-sm"> Total Loses    <span class="badge"><div id="#choiceL")></div></span></button> 
     </div>
   
     <div class="col-sm-4">
       <h5 id="hold"></h5>
-      <h5 id="mylives"></h5>
-      <div id="img"><img src="assets/images/lost.gif" width = 400px height = 200px alt = "win"></div>
+      <h5 id="mylives"></h5><p></p>
+      <div id="img"><img src="assets/images/lost.gif" width = 200px height = 100px alt = "win"></div>
+      <div id="img2"><img src="assets/images/win.gif" width = 200px height = 100px alt = "win"></div>
     </div>
 
     <div class="col-sm-4 sidenav">  
-      <h4> Letters </h4>   
-      <div id="buttons"></div> 
+      <h4> Letters to Click </h4>   
+      <div id="buttons"></div>
+      <h5><h6>Letters Used</h6><div id="usedLe"></div></h5> <!-- show letters used -->
+      <button onclick ="startgame();" id="startG" class="btn btn-warning">Start Game</button> 
+      <button onclick ="reset();" id="new" class="btn btn-warning">Play Again</button>
     </div>
   </div>
 
   <div class = "row">
-   </div class = "col-sm-12">Hint -  Cities of the world</div>
+   <div class = "col-sm-11">
+    <hr>
+    <p>Instrctions : Click start button , Click on the letters to guess. <u><strong>(Hint - Cities around the world)</strong></u>. Press New game to start a new game.</p>
+   </div>
+   <div class = "col-sm-1">
+      <!--<audio id="myAudio" controls>
+        <source src="assets/audio/GangnamStyle.ogg" type="audio/ogg">
+        <source src="assets/audio/GangnamStyle.ogg" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio> -->
+   </div>
   </div>
 
 <footer>
