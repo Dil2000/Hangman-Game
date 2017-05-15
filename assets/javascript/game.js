@@ -1,21 +1,32 @@
 window.onload = function () {
+  $("button#new").css("visibility","hidden");
+}
+
+function startgame(){
+
+  $("button#startG").css("visibility","hidden");
+  $("button#new").css("visibility","visible");
 
   var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
         'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
         't', 'u', 'v', 'w', 'x', 'y', 'z'];
   
   var word ;              // Selected word
-  var guess ;             // Geuss
-  var geusses = [ ];      // Stored geusses
+  var guess ;             // Guess
+  var guesses = [ ];      // Stored guesses
   var lives ;             // Lives
-  var counter ;           // Count correct geusses
+  var counter ;           // Count correct guesses
   var space;              // Number of spaces in word '-'
+  var wins;               // Number of total wins
+  var losses;             // Number of total loses
+  //wins = 0;
+  //losses = 0;
 
   // Get elements
   var showLives = document.getElementById("mylives");
 
   // create alphabet ul
-  var buttons = function () {
+    var buttons = function () {
     myButtons = document.getElementById('buttons');
     letters = document.createElement('ul');
 
@@ -28,10 +39,11 @@ window.onload = function () {
       myButtons.appendChild(letters);
       letters.appendChild(list);
     }
+
   }
-    
   
-  // Create geusses ul
+
+  // Create guesses ul
    result = function () {
     wordHolder = document.getElementById('hold');
     correct = document.createElement('ul');
@@ -47,27 +59,41 @@ window.onload = function () {
         guess.innerHTML = "_";
       }
 
-      geusses.push(guess);
+      guesses.push(guess);
       wordHolder.appendChild(correct);
       correct.appendChild(guess);
     }
   }
   
-  // Show lives
+  // Show Win or Lose
    comments = function () {
+
+    var losses = document.getElementById("#choiceL").innerHTML;
+    var wins = document.getElementById("#choiceW").innerHTML;
+
     showLives.innerHTML = "You have " + lives + " lives";
+
     if (lives < 1) {
       showLives.innerHTML = "Game Over";
       $("div#img").css("display","inline");
+      losses++;
+      document.getElementById("#choiceL").innerHTML = losses;
+      $("div#buttons").css("display","none");
     }
-    for (var i = 0; i < geusses.length; i++) {
-      if (counter + space === geusses.length) {
+
+    for (var i = 0; i < guesses.length; i++) {
+
+      if (counter + space === guesses.length) {
         showLives.innerHTML = "You Win!";
+        $("div#img2").css("display","inline");
+        wins++; 
+        document.getElementById("#choiceW").innerHTML = wins;
+        $("div#buttons").css("display","none");
       }
     }
   }
 
-      // Animate man
+  // Animate man
   var animate = function () {
     //Later -Check for no of lives and if less than 10 then do an if statement to draw rest of the parts automatically.
     var drawMe = lives ;
@@ -76,7 +102,6 @@ window.onload = function () {
   
    // Hangman
   canvas =  function(){
-
     myStickman = document.getElementById("stickman");
     context = myStickman.getContext('2d');
     context.beginPath();
@@ -84,20 +109,20 @@ window.onload = function () {
     context.lineWidth = 2;
   }
   
-    head = function(){
-      myStickman = document.getElementById("stickman");
-      context = myStickman.getContext('2d');
-      context.beginPath();
-      context.arc(60, 25, 10, 0, Math.PI*2, true);
-      context.stroke();
-    }
+  head = function(){
+    myStickman = document.getElementById("stickman");
+    context = myStickman.getContext('2d');
+    context.beginPath();
+    context.arc(60, 25, 10, 0, Math.PI*2, true);
+    context.stroke();
+  }
     
   draw = function($pathFromx, $pathFromy, $pathTox, $pathToy) {
     
     context.moveTo($pathFromx, $pathFromy);
     context.lineTo($pathTox, $pathToy);
     context.stroke(); 
-}
+  }
 
    frame1 = function() {
      draw (0, 150, 150, 150);
@@ -138,16 +163,18 @@ window.onload = function () {
   drawArray = [rightLeg, leftLeg, rightArm, leftArm,  torso,  head, frame4, frame3, frame2, frame1]; 
 
 
-  // OnClick Function
+  // OnClick the keys Function
    check = function () {
     list.onclick = function () {
       var geuss = (this.innerHTML);
+
       this.setAttribute("class", "active");
       this.onclick = null;
+
       var usedLet = 0;
       for (var i = 0; i < word.length; i++) {
         if (word[i] === geuss) {
-          geusses[i].innerHTML = geuss;
+          guesses[i].innerHTML = geuss;
           counter += 1;
         } 
         else{
@@ -172,21 +199,21 @@ window.onload = function () {
   }
   
     
-  // Play
+  // Basic fucntion to start the game
   play = function () {
     categories = [
-        ["storrs", "sydney", "colombo", "montreal", "toronto"],
+        ["cairo", "sydney", "colombo", "montreal", "toronto"],
         ["boston", "stamford", "seattle", "rome", "paris"],
-        ["manchester", "milan", "madrid", "amsterdam", "prague"]
+        ["manchester", "milan", "madrid", "amsterdam", "kandy"]
     ];
 
-    chosenCategory = categories[Math.floor(Math.random() * categories.length)];
+    var chosenCategory = categories[Math.floor(Math.random() * categories.length)];
     word = chosenCategory[Math.floor(Math.random() * chosenCategory.length)];
     word = word.replace(/\s/g, "-");
-    //console.log(word);
+    console.log(word);
     buttons();
 
-    geusses = [ ];
+    guesses = [ ];
     lives = 10;
     counter = 0;
     space = 0;
@@ -196,10 +223,22 @@ window.onload = function () {
   }
 
   play();
-  
-  // Reset
 
-  document.getElementById('#reset').onclick = function() {
-    window.reset() = true;
-  }
 }
+
+  // Reset the window for another word
+  function reset(){
+    $("div#buttons").css("display","inline");
+    $("div#img").css("display","none");
+    $("div#img2").css("display","none");
+    $("div#buttons").empty();
+    $("h5#hold").empty();
+    $("div#usedLe").empty();
+    $("canvas#stickman").empty();
+    dataReset();
+    play();
+  } 
+
+  dataReset = function(){
+    var lives = 10;    
+  }
