@@ -37,9 +37,9 @@
       color:#d1d1d1;
     }
     
-    /*ul{
+    /*{
       display:block;
-    }*/
+    }
    
 
 //******************************************************************/
@@ -70,7 +70,7 @@
       color:white;
     }
 
-#alphabet li:visited{
+#alphabet li: {
   background-color:yellow;
 }
 
@@ -85,20 +85,22 @@
 }
 
 .active {
-  @include opacity;
-  cursor:default;
-    
+  /*@include opacity;
+  cursor:default;*/
+  background-color:green;
+
   &:hover{
-      @include fade;
-      @include opacity;
+      /*@include fade;
+      @include opacity;*/
+      background-color:red;
     }
 }
 
-/*#mylives{
+#mylives{
   font-size:1.6em;
   text-align:center;
   display:block;
-}*/
+}
 
 button{
   color:white;
@@ -119,6 +121,9 @@ button{
     }
 }
 
+
+*/
+
 #my-word {
   margin: 0;
   display: block;
@@ -127,19 +132,31 @@ button{
 }
 
 canvas{
-  color:white;
+  color:#ff8800;
   padding:15px;
+  width:200px;
+  height:200px;
+  border: 1px dotted #ff8800;
 }
 
 #hold {
-  color:#2a9fd6;
+  color:#ff8800;
 }
 
 #stickman{
   background-color:#424242;  
+  color: #ff8800;
 }
 
 #img{  
   display:none;
+}
+
+#img2{
+  display:none;
+}
+
+button#start{
+
 }
 
