@@ -24,13 +24,13 @@
     }
 
     footer {
-    /*background-color:#181818;      
-    position: absolute;*/
-    left: 0;
-    bottom: 0;
-    height:65px;
-    width: 100%;
-    margin-left: -8px;
+    /*background-color:#181818;  */    
+    position: absolute;
+    margin-bottom: -150px; /* negative value of footer height */
+    height: 150px;
+    clear:both;
+    padding-top:20px;
+    width:90%;
     }
 
     p{
@@ -128,7 +128,6 @@ button{
 
 canvas{
   color:white;
-  border: white dashed 2px;
   padding:15px;
 }
 
@@ -137,122 +136,10 @@ canvas{
 }
 
 #stickman{
-  background-color:#424242;
+  background-color:#424242;  
 }
 
 #img{  
   display:none;
 }
 
-/* Mixin's */
-/*
-@mixin transition {
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-}
-
-@mixin clear {
-  &:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-}
-
- @mixin box-size {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
- @mixin transition {
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-
-@mixin fade {
-  -moz-transition: all 1s ease-in;
-  -moz-transition:all 0.3s ease-in-out;
-  -webkit-transition:all 0.3s ease-in-out;
-}
-
-@mixin opacity {
-  opacity:0.4;
-  filter:alpha(opacity=40); 
-  @include fade;
-}
-
-@mixin corners ($radius) {
-  -moz-border-radius: $radius;
-  -webkit-border-radius: $radius;
-  border-radius: $radius; 
-  -khtml-border-radius: $radius; 
-}
-
-@media (max-width: 767px) {
-  #alphabet {
-  padding:0 0 0 15px;
-}
-  }
-
-  @media (max-width: 480px) {
-  #alphabet {
-  padding:0 0 0 25px;
-}
-  }
-
-
-
-
-/* Variabes 
-$orange: #ffa600;
-$green: #c1d72e;
-$blue: #82d2e5;
-$grey:#f3f3f3;
-$white: #fff;
-$base-color:$green ; */
-
-/*
-
-body {
-  background:$base-color;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-  color:$white;
-  height:100%;
-  text-align:center;
-  font-size:18px;
-}
-
-.wrappper{
-  @include clear;
-  width:100%;
-  margin:0 auto;
-}
-
-
-
-
-h1, h2, h3 {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 100;
-  text-transform: uppercase;
-   margin:5px 0;
-}
-
-h1 {
-  font-size: 2.6em;
-}
-
-h2 {
-  font-size: 1.6em;
-}
-
-p{
-  font-size: 1.6em;
-}
-
-
-
-  */
