@@ -66,9 +66,10 @@ function startgame(){
    comments = function () {
     var losses = document.getElementById("#choiceL").innerHTML;
     var wins = document.getElementById("#choiceW").innerHTML;
+    var vid = document.getElementById("myAudio"); 
 
     showLives.innerHTML = "You have " + lives + " lives";
-
+    // Loses
     if (lives < 1) {
       showLives.innerHTML = "Game Over ! City was - " + word;
       $("div#img").css("display","inline");
@@ -76,11 +77,12 @@ function startgame(){
       document.getElementById("#choiceL").innerHTML = losses;
       $("div#buttons").css("display","none");
     }
-
+    // Wins
     if (counter + space === guesses.length) {
       showLives.innerHTML = "You Win!";
       $("div#img2").css("display","inline");                 
       $("div#buttons").css("display","none");
+      vid.play(); 
       wins++;
       document.getElementById("#choiceW").innerHTML = wins;
     }
@@ -223,6 +225,7 @@ function startgame(){
 
   // Reset the window for another word
   function reset(){
+    var vid = document.getElementById("myAudio"); 
     $("div#buttons").css("display","inline");
     $("div#img").css("display","none");
     $("div#img2").css("display","none");
@@ -233,6 +236,6 @@ function startgame(){
     console.log("clear");
     context.clearRect(0,0,200,200);
     var lives = 10; 
+    vid.pause();
     play();
   } 
-
