@@ -86,6 +86,8 @@ function startgame(){
     }
   }
 
+
+
   // Animate man
   var animate = function () {
     //Later -Check for no of lives and if less than 10 then do an if statement to draw rest of the parts automatically.
@@ -227,23 +229,10 @@ function startgame(){
     $("div#buttons").empty();
     $("h5#hold").empty();
     $("div#usedLe").empty();
-    //$("canvas#stickman").empty();
-    canvasReset();
+    context.closePath();
+    console.log("clear");
+    context.clearRect(0,0,200,200);
+    var lives = 10; 
     play();
   } 
 
-  canvasReset = function(){
-    myStickman = document.getElementById("stickman");
-    //drawArray = [rightLeg, leftLeg, rightArm, leftArm,  torso,  head, frame4, frame3, frame2, frame1]; 
-    for (var i = 0 ; i < drawArray.length ; i++) {
-      drawArray[i] = function() {
-        console.log(drawArray[i]);
-        draw (0, 0, 100, 50);
-    }
-  } 
-    var lives = 10; 
-   // result();
-   // comments();
-   // canvas();
-   //play();
-  }
