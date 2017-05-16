@@ -19,8 +19,7 @@ function startgame(){
   var space;              // Number of spaces in word '-'
   var wins;               // Number of total wins
   var losses;             // Number of total loses
-  //wins = 0;
-  //losses = 0;
+
 
   // Get elements
   var showLives = document.getElementById("mylives");
@@ -39,10 +38,8 @@ function startgame(){
       myButtons.appendChild(letters);
       letters.appendChild(list);
     }
-
   }
   
-
   // Create guesses ul
    result = function () {
     wordHolder = document.getElementById('hold');
@@ -64,32 +61,28 @@ function startgame(){
       correct.appendChild(guess);
     }
   }
-  
+
   // Show Win or Lose
    comments = function () {
-
     var losses = document.getElementById("#choiceL").innerHTML;
     var wins = document.getElementById("#choiceW").innerHTML;
 
     showLives.innerHTML = "You have " + lives + " lives";
 
     if (lives < 1) {
-      showLives.innerHTML = "Game Over";
+      showLives.innerHTML = "Game Over ! City was - " + word;
       $("div#img").css("display","inline");
       losses++;
       document.getElementById("#choiceL").innerHTML = losses;
       $("div#buttons").css("display","none");
     }
 
-    for (var i = 0; i < guesses.length; i++) {
-
-      if (counter + space === guesses.length) {
-        showLives.innerHTML = "You Win!";
-        $("div#img2").css("display","inline");
-        wins++; 
-        document.getElementById("#choiceW").innerHTML = wins;
-        $("div#buttons").css("display","none");
-      }
+    if (counter + space === guesses.length) {
+      showLives.innerHTML = "You Win!";
+      $("div#img2").css("display","inline");                 
+      $("div#buttons").css("display","none");
+      wins++;
+      document.getElementById("#choiceW").innerHTML = wins;
     }
   }
 
@@ -164,7 +157,7 @@ function startgame(){
 
 
   // OnClick the keys Function
-   check = function () {
+  check = function () {
     list.onclick = function () {
       var geuss = (this.innerHTML);
 
@@ -234,11 +227,23 @@ function startgame(){
     $("div#buttons").empty();
     $("h5#hold").empty();
     $("div#usedLe").empty();
-    $("canvas#stickman").empty();
-    dataReset();
+    //$("canvas#stickman").empty();
+    canvasReset();
     play();
   } 
 
-  dataReset = function(){
-    var lives = 10;    
+  canvasReset = function(){
+    myStickman = document.getElementById("stickman");
+    //drawArray = [rightLeg, leftLeg, rightArm, leftArm,  torso,  head, frame4, frame3, frame2, frame1]; 
+    for (var i = 0 ; i < drawArray.length ; i++) {
+      drawArray[i] = function() {
+        console.log(drawArray[i]);
+        draw (0, 0, 100, 50);
+    }
+  } 
+    var lives = 10; 
+   // result();
+   // comments();
+   // canvas();
+   //play();
   }
