@@ -52,64 +52,55 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-  
-<div class="container text-center">  
-  <div class="row">
-    <div class="col-sm-12">
-      <h1> Rock Paper Scissors</h1>
-      <p>Instrctions : type r for rock, p for paper and s for scissors with your keyboard keys.</p>
-    </div>
-  </div>  
-
-  <div class="row content">
-
-    <div class="col-sm-2 sidenav">
-      <h4> Your Results </h4>
-      <div id="uwin"></div>
-    </div>
-
-    <div class="col-sm-8 text-center"> 
+<div id = "wrapper">
+  <div class="container text-center">  
+    <div class="row">
+      <div class="col-sm-12">
+        <h1> Rock Paper Scissors</h1>
+        <p>Instrctions : type r for rock, p for paper and s for scissors with your keyboard keys.</p>
+      </div>
+    </div>  
+    <div class="row content">
+      <div class="col-sm-2 sidenav">
+        <h4> Your Results </h4>
+        <div id="uwin"></div>
+      </div>
+      <div class="col-sm-8 text-center"> 
         <h4>
-        <span class="label label-warning">r = rock</span>
-        <span class="label label-warning">p = paper</span>
-        <span class="label label-warning">s = scissors</span>
-      </h4>
-      <img src ="assets/images/rpc.gif" alt="RPC">
-      <hr>
-      
-      <button type="button" class="btn btn-success">You Picked <span class="badge"><div id="#choiceU")></div></span></button>
-      <button type="button" class="btn btn-success">Computer Picked <span class="badge"><div id="#choiceC")></div></span></button>
-
-      <h4><div id="#result">Your Result</div></h4>
-
-    </div>
-
-    <div class="col-sm-2 sidenav">
-      <h4> Computer Results </h4><div id="uloss"></div>
+          <span class="label label-warning">r = rock</span>
+          <span class="label label-warning">p = paper</span>
+          <span class="label label-warning">s = scissors</span>
+        </h4>
+        <img src ="assets/images/rpc.gif" alt="RPC">
+        <hr>        
+        <button type="button" class="btn btn-success">You Picked <span class="badge"><div id="#choiceU")></div></span></button>
+        <button type="button" class="btn btn-success">Computer Picked <span class="badge"><div id="#choiceC")></div></span></button>
+        <h4><div id="#result">Your Result</div></h4>
+      </div>
+      <div class="col-sm-2 sidenav">
+        <h4> Computer Results </h4><div id="uloss"></div>
+      </div>
     </div>
   </div>
-
 </div>
 
-<footer>
-  <div class="col-sm-6 text-left">
-      <p>&copy copyright 2017 Nelum Sam</p>
-  </div>
-  <div class="col-sm-6 text-right">
-     <a href="#" target="_blank"><img src="assets/images/git.png" alt="git" width="40px" height="40px"></a>
-     <a href="#" target="_blank"><img src="assets/images/linked.png" alt="Linked" width="40px" height="40px"></a>
+<footer class="container text-center">
+  <div class = "row">
+    <div class="col-sm-6 col-md-6 text-left">
+        <p>&copy copyright 2017 Nelum Sam</p>
+    </div>
+    <div class="col-sm-6 col-md-6 text-right">
+       <a href="#" target="_blank"><img src="assets/images/git.png" alt="git" width="40px" height="40px"></a>
+       <a href="#" target="_blank"><img src="assets/images/linked.png" alt="Linked" width="40px" height="40px"></a>
+    </div>
   </div>
 </footer>
 
-
-
-<!-- Add the progress bar
-https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_progressbar_3
--->
+<!-- Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!-- External Java Script -->
-   <script type="text/javascript" src="assets/javascript/rockps.js"></script>
+  <script type="text/javascript" src="assets/javascript/rockps.js"></script>
    
 </body>
 </html>
