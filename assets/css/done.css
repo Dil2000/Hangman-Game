@@ -1,42 +1,48 @@
 
  body{
   /*background-color:#181818;*/
-  font-size:14px;
  }
-h1,h5{
-  color:#9933cc;
-}
-h4{
-  color:#77b300;
-}
-h2{
-  color:#2a9fd6;
-}
-div{
-  color:#ff8800;
-}
+    h1,h5{
+      color:#9933cc;
+    }
+    h4{
+      color:#77b300;
+    }
+    h2{
+      color:#2a9fd6;
+    }
+    div{
+      color:#ff8800;
+    }
 
-.navbar {
-  background-color:#181818;
-}
+    .navbar {
+      background-color:#181818;
+    }
 
-#Logo{
-  margin-top:0px;
-}
+    #Logo{
+      margin-top:-30px;
+    }
 
-p{
-  color:#d1d1d1;
-  font-size:14px;
-}
+    footer {
+    /*background-color:#181818;  */    
+    position: absolute;
+    margin-bottom: -150px; /* negative value of footer height */
+    height: 150px;
+    clear:both;
+    padding-top:20px;
+    width:90%;
+    }
 
-#wrapper{
-  height : 80vh;
-  margin-bottom: 10px;
-  clear:both;
-  bottom:70px;
-}
+    p{
+      color:#d1d1d1;
+    }
+    
+    /*ul{
+      display:block;
+    }*/
    
-/******************************************************************/
+
+//******************************************************************/
 
 #alphabet {
   @include clear;
@@ -64,7 +70,7 @@ p{
       color:white;
     }
 
-#alphabet li: {
+#alphabet li:visited{
   background-color:yellow;
 }
 
@@ -79,30 +85,28 @@ p{
 }
 
 .active {
-  /*@include opacity;
-  cursor:default;*/
-  background-color:green;
-
+  @include opacity;
+  cursor:default;
+    
   &:hover{
-      /*@include fade;
-      @include opacity;*/
-      background-color:red;
+      @include fade;
+      @include opacity;
     }
 }
 
-#mylives{
+/*#mylives{
   font-size:1.6em;
   text-align:center;
   display:block;
-}
+}*/
 
 button{
   color:white;
   border: solid 1px white;
   text-decoration:none;
   cursor:pointer;
-  font-size:12px;
-  /*padding:18px 10px;*/
+  font-size:1.2em;
+  padding:18px 10px;
   width:180px;
   margin: 10px;
   outline: none;
@@ -123,20 +127,16 @@ button{
 }
 
 canvas{
-  color:#ff8800;
+  color:white;
   padding:15px;
-  width:200px;
-  height:200px;
-  border: 1px dotted #ff8800;
 }
 
 #hold {
-  color:#ff8800;
+  color:#2a9fd6;
 }
 
 #stickman{
   background-color:#424242;  
-  color: #ff8800;
 }
 
 #img{  
@@ -145,13 +145,5 @@ canvas{
 
 #img2{
   display:none;
-}
-
-button#start{
-
-}
-
-h4.nn{
-  color:#fff;
 }
 

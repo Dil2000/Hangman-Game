@@ -239,3 +239,4 @@ function startgame(){
     vid.pause();
     play();
   } 
+ 

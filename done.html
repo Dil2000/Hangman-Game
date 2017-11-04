@@ -18,7 +18,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
 
   <!-- script specially created for this page -->
-  <script type="text/javascript" src="assets/javascript/game.js"></script>
+  <script type="text/javascript" src="assets/javascript/done.js"></script>
 </head>
 
 <body>
@@ -42,8 +42,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html">Hangman <span class="sr-only">(current)</span></a>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Hangman</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="rockps.html">Rock Paper Scissors</a>
@@ -62,50 +62,39 @@
   <div class="row">
     <div class="col-sm-12">
       <h1> Hangman Game</h1>
-      <h6> Click start button & click on letters</h6> 
-      <hr>
+      <p>Instrctions : Guess cities and press the letters to complete the word. If that letter is in the word(s) then it fills the blank(s) of the word. If the letter isn't in the word, a body part will be added to the gallows (head, body, left arm, right arm, left leg, right leg). Continue guessing letters until either solve the word or all six body parts are on the gallows.</p>
     </div>
   </div>  
   
   <div class ="row">
 
     <div class="col-sm-4 sidenav">
-      <canvas id="stickman">This Text will show if the Browser does NOT support HTML5 Canvas tag</canvas>
-      <button type="button" class="btn btn-success btn-lg"> <h4 class="nn">Total Wins     <span class="badge"><div id="#choiceW")></div></span></h4></button>
-      <button type="button" class="btn btn-success btn-lg"> <h4 class="nn">Total Loses    <span class="badge"><div id="#choiceL")></div></span></h4></button> 
+      <h5><div id="usedLe"></div></h5> <!-- show letters used -->
+      <canvas id="stickman">This Text will show if the Browser does NOT support HTML5 Canvas tag</canvas> 
     </div>
   
     <div class="col-sm-4">
       <h5 id="hold"></h5>
-      <h5 id="mylives"></h5><p></p>
-      <div id="img"><img src="assets/images/lost.gif" width = 200px height = 100px alt = "win"></div>
-      <div id="img2"><img src="assets/images/win.gif" width = 200px height = 100px alt = "win"></div>
+      <h5 id="mylives"></h5>
+      <div id="img"><img src="assets/images/lost.gif" width = 400px height = 200px alt = "win"></div>
+      <div id="img2"><img src="assets/images/win.gif" width = 400px height = 200px alt = "win"></div>
     </div>
 
     <div class="col-sm-4 sidenav">  
-      <h4> Letters to Click </h4>   
-      <div id="buttons"></div>
-      <h5><h6>Letters Used</h6><div id="usedLe"></div></h5> <!-- show letters used -->
-      <button onclick ="startgame();" id="startG" class="btn btn-warning btn-lg"><h4 class="nn">Start Game</h4></button> 
-      <button onclick ="reset();" id="new" class="btn btn-warning btn-lg"><h4 class="nn">Play Again</h4></button>
+      <h4> Letters </h4>   
+      <div id="buttons"></div> 
     </div>
   </div>
 
   <div class = "row">
-   <div class = "col-sm-12">
-    <hr>
-    <p>Instrctions : Click start button , Click on the letters to guess. <u><strong>(Hint - Cities around the world)</strong></u>. Press New game to start a new game.</p>
-   </div>
-  </div>
-
-  <div class = "row">
-    <div class = "col-sm-12">
-        <audio id="myAudio" controls>
+   <div class = "col-sm-11">Hint -  Cities of the world</div>
+   <div class = "col-sm-1">
+      <audio id="myAudio" controls>
         <source src="assets/audio/GangnamStyle.ogg" type="audio/ogg">
         <source src="assets/audio/GangnamStyle.ogg" type="audio/mpeg">
         Your browser does not support the audio element.
-      </audio>
-    </div>
+      </audio> 
+   </div>
   </div>
 
 <footer>
@@ -115,7 +104,7 @@
   </div>
   <div class="col-sm-6 text-right">
      <a href="https://github.com/Dil2000" target="_blank"><img src="assets/images/git.png" alt="git" width="40px" height="40px"></a>
-     <a href="https://www.linkedin.com/in/nelum-sam" target="_blank"><img src="assets/images/linked.png" alt="Linked" width="40px" height="40px"></a>
+     <a href="#" target="_blank"><img src="assets/images/linked.png" alt="Linked" width="40px" height="40px"></a>
   </div>
   </div>
 </footer>
